@@ -1,0 +1,23 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t rnwolfe/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run rnwolfe/react-test npm test -- --coverage
+
+after_success:
+  # Build images
+  - docker build -t rnwolfe/multi-client ./client
+  - docker build -t rnwolfe/multi-server ./server
+  - docker build -t rnwolfe/multi-worker ./worker
+  - docker build -t rnwolfe/multi-nginx ./nginx
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u $DOCKER_ID --password-stdin
+  # Push images to docker hub
+  - docker push rnwolfe/multi-client
+  - docker push rnwolfe/multi-server
+  - docker push rnwolfe/multi-worker
+  - docker push rnwolfe/multi-nginx

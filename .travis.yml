@@ -15,7 +15,7 @@ after_success:
   - docker build -t rnwolfe/multi-worker ./worker
   - docker build -t rnwolfe/multi-nginx ./nginx
   # Log in to the docker CLI
-  - echo '$DOCKER_PASSWORD' | docker login -u $DOCKER_ID --password-stdin
+  - echo $DOCKER_PASSWORD | docker login -u $DOCKER_ID --password-stdin
   # Push images to docker hub
   - docker push rnwolfe/multi-client
   - docker push rnwolfe/multi-server

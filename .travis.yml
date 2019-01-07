@@ -21,3 +21,16 @@ after_success:
   - docker push rnwolfe/multi-server
   - docker push rnwolfe/multi-worker
   - docker push rnwolfe/multi-nginx
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-1
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-us-east-1-077452302813
+  bucket_path: multi-docker
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY

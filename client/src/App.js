@@ -9,7 +9,8 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <header className="App-header" style={{'minHeight': '5vh'}}>
+          <header className="App-header" style={{ 'minHeight': '5vh' }}>
+            <h1>Welcome to Fib Calculator</h1>
             <Link to="/">Home</Link>
             <Link to="/otherpage">Other Page</Link>
           </header>

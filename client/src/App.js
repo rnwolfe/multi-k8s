@@ -50,9 +50,9 @@ class App extends Component {
             <Route path="/otherpage" component={OtherPage} />
           </div>
           <Footer>
-            <span>There should be no downtime given AWS EBS rolling updates.</span>
+            <span>There should be no downtime given kubernetes.</span>
             <br /><br />
-            <span>This is a test app.</span>
+            <span>This is a test app (version 2).</span>
           </Footer>
         </div>
       </Router>

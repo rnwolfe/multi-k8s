@@ -1,6 +1,6 @@
-docker build -t rnwolfe/multi-client:latest -t rnwolfe/multi-client:$GIT_SHA ./client/Dockerfile ./client
-docker build -t rnwolfe/multi-server:latest -t rnwolfe/multi-server:$GIT_SHA ./server/Dockerfile ./server
-docker build -t rnwolfe/multi-worker:latest -t rnwolfe/multi-worker:$GIT_SHA ./worker/Dockerfile ./worker
+docker build -t rnwolfe/multi-client:latest -t rnwolfe/multi-client:$GIT_SHA -f ./client/Dockerfile ./client
+docker build -t rnwolfe/multi-server:latest -t rnwolfe/multi-server:$GIT_SHA -f ./server/Dockerfile ./server
+docker build -t rnwolfe/multi-worker:latest -t rnwolfe/multi-worker:$GIT_SHA -f ./worker/Dockerfile ./worker
 
 docker push rnwolfe/multi-client:latest
 docker push rnwolfe/multi-server:latest

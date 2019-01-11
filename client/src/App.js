@@ -41,7 +41,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <header className="App-header" style={{ 'minHeight': '5vh' }}>
-            <h1>Welcome to Fib Calculator</h1>
+            <h1>Welcome to Fib Calculator (vKube!)</h1>
             <Link to="/">Home</Link>
             <Link to="/otherpage">Other Page</Link>
           </header>
